@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  MapViewController.swift
 //  AutoYama
 //
 //  Created by Алексей on 11.04.17.
@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import GoogleMaps
 
-class FirstViewController: UIViewController {
+class MapViewController: UIViewController {
+  @IBOutlet weak var mapView: GMSMapView!
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    LocationManager.instance.startMonitoring()
+    mapView.isMyLocationEnabled = true
   }
 
   override func didReceiveMemoryWarning() {

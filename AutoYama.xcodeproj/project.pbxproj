@@ -8,22 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		8833DBDA1E9D63FA00CACA85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8833DBD91E9D63FA00CACA85 /* AppDelegate.swift */; };
-		8833DBDC1E9D63FA00CACA85 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8833DBDB1E9D63FA00CACA85 /* FirstViewController.swift */; };
+		8833DBDC1E9D63FA00CACA85 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8833DBDB1E9D63FA00CACA85 /* MapViewController.swift */; };
 		8833DBDE1E9D63FA00CACA85 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8833DBDD1E9D63FA00CACA85 /* SecondViewController.swift */; };
 		8833DBE11E9D63FA00CACA85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8833DBDF1E9D63FA00CACA85 /* Main.storyboard */; };
 		8833DBE31E9D63FA00CACA85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8833DBE21E9D63FA00CACA85 /* Assets.xcassets */; };
 		8833DBE61E9D63FA00CACA85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8833DBE41E9D63FA00CACA85 /* LaunchScreen.storyboard */; };
+		8833DBEE1E9D6A6F00CACA85 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8833DBED1E9D6A6F00CACA85 /* LocationManager.swift */; };
+		8868C9B11ED345E9007493E6 /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8868C9B01ED345E9007493E6 /* StorageHelper.swift */; };
+		8868C9B31ED396F7007493E6 /* Acceleration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8868C9B21ED396F7007493E6 /* Acceleration.swift */; };
+		88E234001ECB7B8E00BB051C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E233FF1ECB7B8E00BB051C /* NetworkManager.swift */; };
+		88E234041ECBB14100BB051C /* Bump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E234031ECBB14100BB051C /* Bump.swift */; };
+		88E234071ECC504800BB051C /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E234061ECC504800BB051C /* APIPath.swift */; };
+		88E234091ECC5B8A00BB051C /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E234081ECC5B8A00BB051C /* DataError.swift */; };
+		CB9E4C6E9862729850BCF576 /* Pods_AutoYama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4E04284CCE7E99B243E071 /* Pods_AutoYama.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E4E04284CCE7E99B243E071 /* Pods_AutoYama.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoYama.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43C7727E94D3322AF5569939 /* Pods-AutoYama.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoYama.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoYama/Pods-AutoYama.debug.xcconfig"; sourceTree = "<group>"; };
+		560824A82F994E25E2DC067C /* Pods-AutoYama.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoYama.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoYama/Pods-AutoYama.release.xcconfig"; sourceTree = "<group>"; };
 		8833DBD61E9D63FA00CACA85 /* AutoYama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoYama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8833DBD91E9D63FA00CACA85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8833DBDB1E9D63FA00CACA85 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		8833DBDB1E9D63FA00CACA85 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8833DBDD1E9D63FA00CACA85 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		8833DBE01E9D63FA00CACA85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8833DBE21E9D63FA00CACA85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8833DBE51E9D63FA00CACA85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8833DBE71E9D63FA00CACA85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8833DBED1E9D6A6F00CACA85 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		8868C9B01ED345E9007493E6 /* StorageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
+		8868C9B21ED396F7007493E6 /* Acceleration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Acceleration.swift; sourceTree = "<group>"; };
+		88E233FF1ECB7B8E00BB051C /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		88E234031ECBB14100BB051C /* Bump.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bump.swift; sourceTree = "<group>"; };
+		88E234061ECC504800BB051C /* APIPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
+		88E234081ECC5B8A00BB051C /* DataError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +49,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB9E4C6E9862729850BCF576 /* Pods_AutoYama.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		061F8695A588BE7F024BD9B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43C7727E94D3322AF5569939 /* Pods-AutoYama.debug.xcconfig */,
+				560824A82F994E25E2DC067C /* Pods-AutoYama.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8833DBCD1E9D63FA00CACA85 = {
 			isa = PBXGroup;
 			children = (
 				8833DBD81E9D63FA00CACA85 /* AutoYama */,
 				8833DBD71E9D63FA00CACA85 /* Products */,
+				061F8695A588BE7F024BD9B0 /* Pods */,
+				B8E7D202C9693CE61B6A45F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,8 +86,10 @@
 		8833DBD81E9D63FA00CACA85 /* AutoYama */ = {
 			isa = PBXGroup;
 			children = (
+				88E234051ECBB68800BB051C /* Extensions */,
+				88E234011ECBB12A00BB051C /* Data */,
 				8833DBD91E9D63FA00CACA85 /* AppDelegate.swift */,
-				8833DBDB1E9D63FA00CACA85 /* FirstViewController.swift */,
+				8833DBDB1E9D63FA00CACA85 /* MapViewController.swift */,
 				8833DBDD1E9D63FA00CACA85 /* SecondViewController.swift */,
 				8833DBDF1E9D63FA00CACA85 /* Main.storyboard */,
 				8833DBE21E9D63FA00CACA85 /* Assets.xcassets */,
@@ -67,6 +99,43 @@
 			path = AutoYama;
 			sourceTree = "<group>";
 		};
+		88E234011ECBB12A00BB051C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				88E234021ECBB13500BB051C /* Model */,
+				8833DBED1E9D6A6F00CACA85 /* LocationManager.swift */,
+				88E233FF1ECB7B8E00BB051C /* NetworkManager.swift */,
+				88E234061ECC504800BB051C /* APIPath.swift */,
+				88E234081ECC5B8A00BB051C /* DataError.swift */,
+				8868C9B01ED345E9007493E6 /* StorageHelper.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		88E234021ECBB13500BB051C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				88E234031ECBB14100BB051C /* Bump.swift */,
+				8868C9B21ED396F7007493E6 /* Acceleration.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		88E234051ECBB68800BB051C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		B8E7D202C9693CE61B6A45F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E4E04284CCE7E99B243E071 /* Pods_AutoYama.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +143,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8833DBEA1E9D63FA00CACA85 /* Build configuration list for PBXNativeTarget "AutoYama" */;
 			buildPhases = (
+				83BE5469983143299F0248FB /* [CP] Check Pods Manifest.lock */,
 				8833DBD21E9D63FA00CACA85 /* Sources */,
 				8833DBD31E9D63FA00CACA85 /* Frameworks */,
 				8833DBD41E9D63FA00CACA85 /* Resources */,
+				4EF08E97C8F1245CE40DDB99 /* [CP] Embed Pods Frameworks */,
+				4CE45F43E8A61E1F7831619E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -101,6 +173,11 @@
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = 7HLY3EQ26F;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -135,14 +212,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4CE45F43E8A61E1F7831619E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoYama/Pods-AutoYama-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4EF08E97C8F1245CE40DDB99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoYama/Pods-AutoYama-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83BE5469983143299F0248FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8833DBD21E9D63FA00CACA85 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8833DBDE1E9D63FA00CACA85 /* SecondViewController.swift in Sources */,
+				8833DBEE1E9D6A6F00CACA85 /* LocationManager.swift in Sources */,
+				8868C9B11ED345E9007493E6 /* StorageHelper.swift in Sources */,
+				88E234001ECB7B8E00BB051C /* NetworkManager.swift in Sources */,
+				88E234041ECBB14100BB051C /* Bump.swift in Sources */,
+				88E234071ECC504800BB051C /* APIPath.swift in Sources */,
 				8833DBDA1E9D63FA00CACA85 /* AppDelegate.swift in Sources */,
-				8833DBDC1E9D63FA00CACA85 /* FirstViewController.swift in Sources */,
+				88E234091ECC5B8A00BB051C /* DataError.swift in Sources */,
+				8833DBDC1E9D63FA00CACA85 /* MapViewController.swift in Sources */,
+				8868C9B31ED396F7007493E6 /* Acceleration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +395,7 @@
 		};
 		8833DBEB1E9D63FA00CACA85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43C7727E94D3322AF5569939 /* Pods-AutoYama.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7HLY3EQ26F;
@@ -276,6 +409,7 @@
 		};
 		8833DBEC1E9D63FA00CACA85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 560824A82F994E25E2DC067C /* Pods-AutoYama.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7HLY3EQ26F;
@@ -306,6 +440,7 @@
 				8833DBEC1E9D63FA00CACA85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
