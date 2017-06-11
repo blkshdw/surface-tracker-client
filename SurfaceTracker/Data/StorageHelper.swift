@@ -1,6 +1,6 @@
 //
 //  StorageHelper.swift
-//  AutoYama
+//  SurfaceTracker
 //
 //  Created by Алексей on 22.05.17.
 //  Copyright © 2017 tetofa. All rights reserved.
@@ -19,7 +19,7 @@ class StorageHelper {
     case bumps
   }
 
-  static func save(_ object: Any?, forKey key: StorageKey) throws {
+  static func save(_ object: Any?, forKey key: StorageKey) {
     let userDefaults = UserDefaults.standard
     userDefaults.set(object, forKey: key.rawValue)
   }

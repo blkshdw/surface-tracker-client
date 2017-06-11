@@ -1,6 +1,6 @@
 //
 //  NetworkManager.swift
-//  AutoYama
+//  SurfaceTracker
 //
 //  Created by Алексей on 16.05.17.
 //  Copyright © 2017 tetofa. All rights reserved.
@@ -9,10 +9,11 @@
 import Foundation
 import Alamofire
 import PromiseKit
+import ObjectMapper
 
 class NetworkManager {
-  static let baseUrl = "https://sportup-staging.herokuapp.com"
-  static let apiPrefix = "/api/"
+  static let baseUrl = "http://127.0.0.1:3000"
+  static let apiPrefix = "/"
 
   static func doRequest(_ path: APIPath, _ params: Parameters = [:], _ headers: HTTPHeaders = [:]) -> Promise<Any> {
     return Promise() { fullfill, reject in
@@ -30,8 +31,9 @@ class NetworkManager {
           debugPrint(response)
           switch response.result {
           case .success:
-            if let result = response.result.value {
-              fullfill(result)
+            if let responseObj = Mapper<SurfaceTrackerResponse>().map(JSONObject: response.result.value) {
+              guard responseObj.status == "ok" else { return reject(DataError.unknown) }
+              fullfill(responseObj.response)
             } else {
               reject(DataError.unexpectedResponseFormat)
             }
@@ -61,5 +63,17 @@ class NetworkManager {
     case 503, 500: return .serverUnavaliable
     default: return .unknown
     }
+  }
+}
+
+class SurfaceTrackerResponse: Mappable {
+  var status: String = ""
+  var response: Any? = nil
+
+  required init(map: Map) { }
+
+  func mapping(map: Map) {
+    status <- map["status"]
+    response <- map["response"]
   }
 }

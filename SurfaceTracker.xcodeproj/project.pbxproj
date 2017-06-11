@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		882E50A21EE7453E004C7C9B /* LocationCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E50A11EE7453E004C7C9B /* LocationCoordinate.swift */; };
 		8833DBDA1E9D63FA00CACA85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8833DBD91E9D63FA00CACA85 /* AppDelegate.swift */; };
 		8833DBDC1E9D63FA00CACA85 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8833DBDB1E9D63FA00CACA85 /* MapViewController.swift */; };
 		8833DBDE1E9D63FA00CACA85 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8833DBDD1E9D63FA00CACA85 /* SecondViewController.swift */; };
@@ -16,18 +17,22 @@
 		8833DBEE1E9D6A6F00CACA85 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8833DBED1E9D6A6F00CACA85 /* LocationManager.swift */; };
 		8868C9B11ED345E9007493E6 /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8868C9B01ED345E9007493E6 /* StorageHelper.swift */; };
 		8868C9B31ED396F7007493E6 /* Acceleration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8868C9B21ED396F7007493E6 /* Acceleration.swift */; };
+		889A62B01EEDE1E300295C3C /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889A62AF1EEDE1E300295C3C /* NotificationManager.swift */; };
 		88E234001ECB7B8E00BB051C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E233FF1ECB7B8E00BB051C /* NetworkManager.swift */; };
 		88E234041ECBB14100BB051C /* Bump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E234031ECBB14100BB051C /* Bump.swift */; };
 		88E234071ECC504800BB051C /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E234061ECC504800BB051C /* APIPath.swift */; };
 		88E234091ECC5B8A00BB051C /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E234081ECC5B8A00BB051C /* DataError.swift */; };
-		CB9E4C6E9862729850BCF576 /* Pods_AutoYama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4E04284CCE7E99B243E071 /* Pods_AutoYama.framework */; };
+		DBEE0DB0A7694DE3CA9C75F9 /* Pods_SurfaceTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6725D879F8C4BD1A44621131 /* Pods_SurfaceTracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E04C11206538E6583C9BBCB /* Pods-SurfaceTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfaceTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-SurfaceTracker/Pods-SurfaceTracker.release.xcconfig"; sourceTree = "<group>"; };
 		2E4E04284CCE7E99B243E071 /* Pods_AutoYama.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoYama.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43C7727E94D3322AF5569939 /* Pods-AutoYama.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoYama.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoYama/Pods-AutoYama.debug.xcconfig"; sourceTree = "<group>"; };
 		560824A82F994E25E2DC067C /* Pods-AutoYama.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoYama.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoYama/Pods-AutoYama.release.xcconfig"; sourceTree = "<group>"; };
-		8833DBD61E9D63FA00CACA85 /* AutoYama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoYama.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6725D879F8C4BD1A44621131 /* Pods_SurfaceTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurfaceTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		882E50A11EE7453E004C7C9B /* LocationCoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCoordinate.swift; sourceTree = "<group>"; };
+		8833DBD61E9D63FA00CACA85 /* SurfaceTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfaceTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8833DBD91E9D63FA00CACA85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8833DBDB1E9D63FA00CACA85 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8833DBDD1E9D63FA00CACA85 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
@@ -38,10 +43,12 @@
 		8833DBED1E9D6A6F00CACA85 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		8868C9B01ED345E9007493E6 /* StorageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
 		8868C9B21ED396F7007493E6 /* Acceleration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Acceleration.swift; sourceTree = "<group>"; };
+		889A62AF1EEDE1E300295C3C /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		88E233FF1ECB7B8E00BB051C /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		88E234031ECBB14100BB051C /* Bump.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bump.swift; sourceTree = "<group>"; };
 		88E234061ECC504800BB051C /* APIPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
 		88E234081ECC5B8A00BB051C /* DataError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
+		9AA93B12D8688E964298F163 /* Pods-SurfaceTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfaceTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SurfaceTracker/Pods-SurfaceTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB9E4C6E9862729850BCF576 /* Pods_AutoYama.framework in Frameworks */,
+				DBEE0DB0A7694DE3CA9C75F9 /* Pods_SurfaceTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +68,8 @@
 			children = (
 				43C7727E94D3322AF5569939 /* Pods-AutoYama.debug.xcconfig */,
 				560824A82F994E25E2DC067C /* Pods-AutoYama.release.xcconfig */,
+				9AA93B12D8688E964298F163 /* Pods-SurfaceTracker.debug.xcconfig */,
+				1E04C11206538E6583C9BBCB /* Pods-SurfaceTracker.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -68,70 +77,73 @@
 		8833DBCD1E9D63FA00CACA85 = {
 			isa = PBXGroup;
 			children = (
-				8833DBD81E9D63FA00CACA85 /* AutoYama */,
-				8833DBD71E9D63FA00CACA85 /* Products */,
-				061F8695A588BE7F024BD9B0 /* Pods */,
+				885B171B1ED4489E00E5AB3B /* SurfaceTracker */,
 				B8E7D202C9693CE61B6A45F1 /* Frameworks */,
+				061F8695A588BE7F024BD9B0 /* Pods */,
+				8833DBD71E9D63FA00CACA85 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
 		8833DBD71E9D63FA00CACA85 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8833DBD61E9D63FA00CACA85 /* AutoYama.app */,
+				8833DBD61E9D63FA00CACA85 /* SurfaceTracker.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8833DBD81E9D63FA00CACA85 /* AutoYama */ = {
+		885B171B1ED4489E00E5AB3B /* SurfaceTracker */ = {
 			isa = PBXGroup;
 			children = (
-				88E234051ECBB68800BB051C /* Extensions */,
 				88E234011ECBB12A00BB051C /* Data */,
+				88E234051ECBB68800BB051C /* Extensions */,
 				8833DBD91E9D63FA00CACA85 /* AppDelegate.swift */,
+				8833DBE21E9D63FA00CACA85 /* Assets.xcassets */,
+				8833DBE71E9D63FA00CACA85 /* Info.plist */,
+				8833DBE41E9D63FA00CACA85 /* LaunchScreen.storyboard */,
+				8833DBDF1E9D63FA00CACA85 /* Main.storyboard */,
 				8833DBDB1E9D63FA00CACA85 /* MapViewController.swift */,
 				8833DBDD1E9D63FA00CACA85 /* SecondViewController.swift */,
-				8833DBDF1E9D63FA00CACA85 /* Main.storyboard */,
-				8833DBE21E9D63FA00CACA85 /* Assets.xcassets */,
-				8833DBE41E9D63FA00CACA85 /* LaunchScreen.storyboard */,
-				8833DBE71E9D63FA00CACA85 /* Info.plist */,
 			);
-			path = AutoYama;
+			path = SurfaceTracker;
 			sourceTree = "<group>";
 		};
 		88E234011ECBB12A00BB051C /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				88E234021ECBB13500BB051C /* Model */,
-				8833DBED1E9D6A6F00CACA85 /* LocationManager.swift */,
-				88E233FF1ECB7B8E00BB051C /* NetworkManager.swift */,
 				88E234061ECC504800BB051C /* APIPath.swift */,
 				88E234081ECC5B8A00BB051C /* DataError.swift */,
+				8833DBED1E9D6A6F00CACA85 /* LocationManager.swift */,
+				88E233FF1ECB7B8E00BB051C /* NetworkManager.swift */,
 				8868C9B01ED345E9007493E6 /* StorageHelper.swift */,
+				889A62AF1EEDE1E300295C3C /* NotificationManager.swift */,
 			);
-			name = Data;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		88E234021ECBB13500BB051C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				88E234031ECBB14100BB051C /* Bump.swift */,
 				8868C9B21ED396F7007493E6 /* Acceleration.swift */,
+				88E234031ECBB14100BB051C /* Bump.swift */,
+				882E50A11EE7453E004C7C9B /* LocationCoordinate.swift */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		88E234051ECBB68800BB051C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B8E7D202C9693CE61B6A45F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				2E4E04284CCE7E99B243E071 /* Pods_AutoYama.framework */,
+				6725D879F8C4BD1A44621131 /* Pods_SurfaceTracker.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -139,9 +151,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8833DBD51E9D63FA00CACA85 /* AutoYama */ = {
+		8833DBD51E9D63FA00CACA85 /* SurfaceTracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8833DBEA1E9D63FA00CACA85 /* Build configuration list for PBXNativeTarget "AutoYama" */;
+			buildConfigurationList = 8833DBEA1E9D63FA00CACA85 /* Build configuration list for PBXNativeTarget "SurfaceTracker" */;
 			buildPhases = (
 				83BE5469983143299F0248FB /* [CP] Check Pods Manifest.lock */,
 				8833DBD21E9D63FA00CACA85 /* Sources */,
@@ -154,9 +166,9 @@
 			);
 			dependencies = (
 			);
-			name = AutoYama;
+			name = SurfaceTracker;
 			productName = AutoYama;
-			productReference = 8833DBD61E9D63FA00CACA85 /* AutoYama.app */;
+			productReference = 8833DBD61E9D63FA00CACA85 /* SurfaceTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -181,7 +193,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8833DBD11E9D63FA00CACA85 /* Build configuration list for PBXProject "AutoYama" */;
+			buildConfigurationList = 8833DBD11E9D63FA00CACA85 /* Build configuration list for PBXProject "SurfaceTracker" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -194,7 +206,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8833DBD51E9D63FA00CACA85 /* AutoYama */,
+				8833DBD51E9D63FA00CACA85 /* SurfaceTracker */,
 			);
 		};
 /* End PBXProject section */
@@ -225,7 +237,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoYama/Pods-AutoYama-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SurfaceTracker/Pods-SurfaceTracker-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4EF08E97C8F1245CE40DDB99 /* [CP] Embed Pods Frameworks */ = {
@@ -240,7 +252,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoYama/Pods-AutoYama-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SurfaceTracker/Pods-SurfaceTracker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		83BE5469983143299F0248FB /* [CP] Check Pods Manifest.lock */ = {
@@ -268,8 +280,10 @@
 				8833DBDE1E9D63FA00CACA85 /* SecondViewController.swift in Sources */,
 				8833DBEE1E9D6A6F00CACA85 /* LocationManager.swift in Sources */,
 				8868C9B11ED345E9007493E6 /* StorageHelper.swift in Sources */,
+				882E50A21EE7453E004C7C9B /* LocationCoordinate.swift in Sources */,
 				88E234001ECB7B8E00BB051C /* NetworkManager.swift in Sources */,
 				88E234041ECBB14100BB051C /* Bump.swift in Sources */,
+				889A62B01EEDE1E300295C3C /* NotificationManager.swift in Sources */,
 				88E234071ECC504800BB051C /* APIPath.swift in Sources */,
 				8833DBDA1E9D63FA00CACA85 /* AppDelegate.swift in Sources */,
 				88E234091ECC5B8A00BB051C /* DataError.swift in Sources */,
@@ -287,6 +301,7 @@
 				8833DBE01E9D63FA00CACA85 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		8833DBE41E9D63FA00CACA85 /* LaunchScreen.storyboard */ = {
@@ -295,6 +310,7 @@
 				8833DBE51E9D63FA00CACA85 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -395,13 +411,13 @@
 		};
 		8833DBEB1E9D63FA00CACA85 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43C7727E94D3322AF5569939 /* Pods-AutoYama.debug.xcconfig */;
+			baseConfigurationReference = 9AA93B12D8688E964298F163 /* Pods-SurfaceTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7HLY3EQ26F;
-				INFOPLIST_FILE = AutoYama/Info.plist;
+				INFOPLIST_FILE = SurfaceTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.tetofa.AutoYama;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.tetofa.SurfaceTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -409,13 +425,13 @@
 		};
 		8833DBEC1E9D63FA00CACA85 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 560824A82F994E25E2DC067C /* Pods-AutoYama.release.xcconfig */;
+			baseConfigurationReference = 1E04C11206538E6583C9BBCB /* Pods-SurfaceTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7HLY3EQ26F;
-				INFOPLIST_FILE = AutoYama/Info.plist;
+				INFOPLIST_FILE = SurfaceTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.tetofa.AutoYama;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.tetofa.SurfaceTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -424,7 +440,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8833DBD11E9D63FA00CACA85 /* Build configuration list for PBXProject "AutoYama" */ = {
+		8833DBD11E9D63FA00CACA85 /* Build configuration list for PBXProject "SurfaceTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8833DBE81E9D63FA00CACA85 /* Debug */,
@@ -433,7 +449,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8833DBEA1E9D63FA00CACA85 /* Build configuration list for PBXNativeTarget "AutoYama" */ = {
+		8833DBEA1E9D63FA00CACA85 /* Build configuration list for PBXNativeTarget "SurfaceTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8833DBEB1E9D63FA00CACA85 /* Debug */,

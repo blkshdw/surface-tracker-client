@@ -1,6 +1,6 @@
 //
 //  SecondViewController.swift
-//  AutoYama
+//  SurfaceTracker
 //
 //  Created by Алексей on 11.04.17.
 //  Copyright © 2017 tetofa. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SettingsViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()

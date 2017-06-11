@@ -1,6 +1,6 @@
 //
 //  Acceleration.swift
-//  AutoYama
+//  SurfaceTracker
 //
 //  Created by Алексей on 23.05.17.
 //  Copyright © 2017 tetofa. All rights reserved.
@@ -11,14 +11,14 @@ import ObjectMapper
 import CoreMotion
 
 class Acceleration: Mappable {
-  var x: Double!
-  var y: Double!
-  var z: Double!
+  var x: Double = 0
+  var y: Double = 0
+  var z: Double = 0
 
-  init(acceleration: CMAcceleration) {
-    x = acceleration.x
-    y = acceleration.y
-    z = acceleration.z
+  init(_ acceleration: CMAcceleration?) {
+    x = acceleration?.x ?? 0
+    y = acceleration?.y ?? 0
+    z = acceleration?.z ?? 0
   }
 
   required init?(map: Map) { }

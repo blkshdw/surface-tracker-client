@@ -1,8 +1,8 @@
 //
-//  Bump.swift
-//  AutoYama
+//  LocationCoordinate.swift
+//  SurfaceTracker
 //
-//  Created by Алексей on 17.05.17.
+//  Created by Алексей on 06.06.17.
 //  Copyright © 2017 tetofa. All rights reserved.
 //
 
@@ -10,10 +10,10 @@ import Foundation
 import ObjectMapper
 import CoreLocation
 
-class Bump: Mappable {
+class LocationCoordinate: Mappable {
   var latitude: Double? = nil
   var longitude: Double? = nil
-  var location: CLLocationCoordinate2D? {
+  var coordinates: CLLocationCoordinate2D? {
     get {
       guard let latitude = latitude, let longitude = longitude else { return nil }
       return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
@@ -28,14 +28,12 @@ class Bump: Mappable {
 
   required init?(map: Map) { }
 
-  init(location: CLLocationCoordinate2D?, acceleration: Acceleration) {
-    self.location = location
-    self.acceleration = acceleration
+  init(location: CLLocationCoordinate2D?) {
+    self.coordinates = location
   }
 
   func mapping(map: Map) {
     latitude <- map["latitude"]
     longitude <- map["longitude"]
-    acceleration <- map["acceleration"]
   }
 }

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  AutoYama
+//  SurfaceTracker
 //
 //  Created by Алексей on 11.04.17.
 //  Copyright © 2017 tetofa. All rights reserved.
@@ -8,22 +8,30 @@
 
 import UIKit
 import GoogleMaps
+import UserNotifications
 
 private let googleMapsApiKey = "AIzaSyAL0CZs1iU-NhOfNhKxaLhuCL2Dud1b1Ak"
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
   var window: UIWindow?
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { granted, error in
+      // handle error if there is one
+    })
+    UNUserNotificationCenter.current().delegate = self
 
     // Google Maps
     GMSServices.provideAPIKey(googleMapsApiKey)
-
     return true
+  }
+
+  func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    completionHandler(.alert)
   }
 
   func applicationWillResignActive(_ application: UIApplication) {
@@ -32,6 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func applicationDidEnterBackground(_ application: UIApplication) {
+    application.beginBackgroundTask(expirationHandler: nil)
+    LocationManager.instance.resetMonitoring()
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
   }
