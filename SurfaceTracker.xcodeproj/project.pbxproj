@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		882E50A21EE7453E004C7C9B /* LocationCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E50A11EE7453E004C7C9B /* LocationCoordinate.swift */; };
+		8832AA841EEDFACB0092FDD0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832AA831EEDFACB0092FDD0 /* Configuration.swift */; };
 		8833DBDA1E9D63FA00CACA85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8833DBD91E9D63FA00CACA85 /* AppDelegate.swift */; };
 		8833DBDC1E9D63FA00CACA85 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8833DBDB1E9D63FA00CACA85 /* MapViewController.swift */; };
-		8833DBDE1E9D63FA00CACA85 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8833DBDD1E9D63FA00CACA85 /* SecondViewController.swift */; };
+		8833DBDE1E9D63FA00CACA85 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8833DBDD1E9D63FA00CACA85 /* SettingsViewController.swift */; };
 		8833DBE11E9D63FA00CACA85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8833DBDF1E9D63FA00CACA85 /* Main.storyboard */; };
 		8833DBE31E9D63FA00CACA85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8833DBE21E9D63FA00CACA85 /* Assets.xcassets */; };
 		8833DBE61E9D63FA00CACA85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8833DBE41E9D63FA00CACA85 /* LaunchScreen.storyboard */; };
-		8833DBEE1E9D6A6F00CACA85 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8833DBED1E9D6A6F00CACA85 /* LocationManager.swift */; };
+		8833DBEE1E9D6A6F00CACA85 /* BumpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8833DBED1E9D6A6F00CACA85 /* BumpManager.swift */; };
 		8868C9B11ED345E9007493E6 /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8868C9B01ED345E9007493E6 /* StorageHelper.swift */; };
 		8868C9B31ED396F7007493E6 /* Acceleration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8868C9B21ED396F7007493E6 /* Acceleration.swift */; };
 		889A62B01EEDE1E300295C3C /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889A62AF1EEDE1E300295C3C /* NotificationManager.swift */; };
@@ -32,15 +33,16 @@
 		560824A82F994E25E2DC067C /* Pods-AutoYama.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoYama.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoYama/Pods-AutoYama.release.xcconfig"; sourceTree = "<group>"; };
 		6725D879F8C4BD1A44621131 /* Pods_SurfaceTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurfaceTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		882E50A11EE7453E004C7C9B /* LocationCoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCoordinate.swift; sourceTree = "<group>"; };
+		8832AA831EEDFACB0092FDD0 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = ../Configuration.swift; sourceTree = "<group>"; };
 		8833DBD61E9D63FA00CACA85 /* SurfaceTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfaceTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8833DBD91E9D63FA00CACA85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8833DBDB1E9D63FA00CACA85 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		8833DBDD1E9D63FA00CACA85 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		8833DBDD1E9D63FA00CACA85 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8833DBE01E9D63FA00CACA85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8833DBE21E9D63FA00CACA85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8833DBE51E9D63FA00CACA85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8833DBE71E9D63FA00CACA85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8833DBED1E9D6A6F00CACA85 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		8833DBED1E9D6A6F00CACA85 /* BumpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BumpManager.swift; sourceTree = "<group>"; };
 		8868C9B01ED345E9007493E6 /* StorageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
 		8868C9B21ED396F7007493E6 /* Acceleration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Acceleration.swift; sourceTree = "<group>"; };
 		889A62AF1EEDE1E300295C3C /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
@@ -103,7 +105,7 @@
 				8833DBE41E9D63FA00CACA85 /* LaunchScreen.storyboard */,
 				8833DBDF1E9D63FA00CACA85 /* Main.storyboard */,
 				8833DBDB1E9D63FA00CACA85 /* MapViewController.swift */,
-				8833DBDD1E9D63FA00CACA85 /* SecondViewController.swift */,
+				8833DBDD1E9D63FA00CACA85 /* SettingsViewController.swift */,
 			);
 			path = SurfaceTracker;
 			sourceTree = "<group>";
@@ -114,7 +116,7 @@
 				88E234021ECBB13500BB051C /* Model */,
 				88E234061ECC504800BB051C /* APIPath.swift */,
 				88E234081ECC5B8A00BB051C /* DataError.swift */,
-				8833DBED1E9D6A6F00CACA85 /* LocationManager.swift */,
+				8833DBED1E9D6A6F00CACA85 /* BumpManager.swift */,
 				88E233FF1ECB7B8E00BB051C /* NetworkManager.swift */,
 				8868C9B01ED345E9007493E6 /* StorageHelper.swift */,
 				889A62AF1EEDE1E300295C3C /* NotificationManager.swift */,
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				8868C9B21ED396F7007493E6 /* Acceleration.swift */,
+				8832AA831EEDFACB0092FDD0 /* Configuration.swift */,
 				88E234031ECBB14100BB051C /* Bump.swift */,
 				882E50A11EE7453E004C7C9B /* LocationCoordinate.swift */,
 			);
@@ -277,13 +280,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8833DBDE1E9D63FA00CACA85 /* SecondViewController.swift in Sources */,
-				8833DBEE1E9D6A6F00CACA85 /* LocationManager.swift in Sources */,
+				8833DBDE1E9D63FA00CACA85 /* SettingsViewController.swift in Sources */,
+				8833DBEE1E9D6A6F00CACA85 /* BumpManager.swift in Sources */,
 				8868C9B11ED345E9007493E6 /* StorageHelper.swift in Sources */,
 				882E50A21EE7453E004C7C9B /* LocationCoordinate.swift in Sources */,
 				88E234001ECB7B8E00BB051C /* NetworkManager.swift in Sources */,
 				88E234041ECBB14100BB051C /* Bump.swift in Sources */,
 				889A62B01EEDE1E300295C3C /* NotificationManager.swift in Sources */,
+				8832AA841EEDFACB0092FDD0 /* Configuration.swift in Sources */,
 				88E234071ECC504800BB051C /* APIPath.swift in Sources */,
 				8833DBDA1E9D63FA00CACA85 /* AppDelegate.swift in Sources */,
 				88E234091ECC5B8A00BB051C /* DataError.swift in Sources */,

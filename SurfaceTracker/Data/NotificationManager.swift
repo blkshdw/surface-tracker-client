@@ -15,6 +15,7 @@ private let categoryIdentifier = "alertCategory"
 class NotificationManager {
 
   static func show(_ title: String = "Alert!", subtitle: String = "Do not tap", body: String = "  ") {
+    guard Configuration.current.pushNotificationEnabled else { return }
 
     let content = UNMutableNotificationContent()
     content.title = title
@@ -28,6 +29,7 @@ class NotificationManager {
     let requestIdentifier = categoryIdentifier
     let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger: trigger)
     UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
+      guard let error = error else { return }
       debugPrint(error)
     })
   }

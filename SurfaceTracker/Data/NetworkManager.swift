@@ -32,8 +32,8 @@ class NetworkManager {
           switch response.result {
           case .success:
             if let responseObj = Mapper<SurfaceTrackerResponse>().map(JSONObject: response.result.value) {
-              guard responseObj.status == "ok" else { return reject(DataError.unknown) }
-              fullfill(responseObj.response)
+              guard let data = responseObj.data, responseObj.status == "ok" else { return reject(DataError.unknown) }
+              fullfill(data)
             } else {
               reject(DataError.unexpectedResponseFormat)
             }
@@ -68,12 +68,12 @@ class NetworkManager {
 
 class SurfaceTrackerResponse: Mappable {
   var status: String = ""
-  var response: Any? = nil
+  var data: Any? = nil
 
   required init(map: Map) { }
 
   func mapping(map: Map) {
     status <- map["status"]
-    response <- map["response"]
+    data <- map["response"]
   }
 }

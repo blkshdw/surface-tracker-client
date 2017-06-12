@@ -14,10 +14,10 @@ class MapViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    LocationManager.instance.resetMonitoring()
+    BumpManager.instance.resetMonitoring()
     mapView.isMyLocationEnabled = true
 
-    for bump in LocationManager.instance.countedBumps {
+    for bump in BumpManager.instance.countedBumps {
       guard let position = bump.location?.coordinates else { continue }
       let marker = GMSMarker(position: position)
       marker.map = mapView

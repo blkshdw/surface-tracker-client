@@ -17,6 +17,7 @@ class StorageHelper {
   enum StorageKey: String {
     case isLoaded
     case bumps
+    case configuration
   }
 
   static func save(_ object: Any?, forKey key: StorageKey) {
