@@ -24,7 +24,7 @@ class NotificationManager {
     content.badge = 1
     content.categoryIdentifier = categoryIdentifier
 
-    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
 
     let requestIdentifier = categoryIdentifier
     let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger: trigger)
@@ -33,7 +33,5 @@ class NotificationManager {
       debugPrint(error)
     })
   }
-
-
 
 }

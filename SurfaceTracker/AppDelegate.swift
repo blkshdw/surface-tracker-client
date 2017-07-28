@@ -1,4 +1,4 @@
-//
+  //
 //  AppDelegate.swift
 //  SurfaceTracker
 //
@@ -19,15 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
-    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { granted, error in
-      // handle error if there is one
-    })
-    UNUserNotificationCenter.current().delegate = self
-
+    configureNotificationCenter()
     // Google Maps
     GMSServices.provideAPIKey(googleMapsApiKey)
     return true
+  }
+
+  func configureNotificationCenter() {
+    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { granted, error in
+    })
+    UNUserNotificationCenter.current().delegate = self
+    UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+    BumpManager.instance.startMonitoring()
+
   }
 
   func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
@@ -41,12 +45,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
   func applicationDidEnterBackground(_ application: UIApplication) {
     application.beginBackgroundTask(expirationHandler: nil)
-    BumpManager.instance.resetMonitoring()
+    _ = BumpManager.instance.sendSavedBumps()
+    BumpManager.instance.startMonitoring()
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
   }
 
   func applicationWillEnterForeground(_ application: UIApplication) {
+    UIApplication.shared.applicationIconBadgeNumber = 0
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
   }
 
@@ -55,6 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   }
 
   func applicationWillTerminate(_ application: UIApplication) {
+    _ = BumpManager.instance.sendSavedBumps()
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 
   }

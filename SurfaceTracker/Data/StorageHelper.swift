@@ -17,6 +17,7 @@ class StorageHelper {
   enum StorageKey: String {
     case isLoaded
     case bumps
+    case backupBumps
     case configuration
   }
 

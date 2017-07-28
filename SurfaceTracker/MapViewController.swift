@@ -8,27 +8,46 @@
 
 import UIKit
 import GoogleMaps
+import CoreLocation
+
+private let cityZoom: Float = 10
 
 class MapViewController: UIViewController {
+  let locationManager = CLLocationManager()
   @IBOutlet weak var mapView: GMSMapView!
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    BumpManager.instance.resetMonitoring()
     mapView.isMyLocationEnabled = true
 
-    for bump in BumpManager.instance.countedBumps {
-      guard let position = bump.location?.coordinates else { continue }
-      let marker = GMSMarker(position: position)
-      marker.map = mapView
+    configureMap()
+  }
+
+  func configureMap() {
+    DataManager.fetchBumps().then { [weak self] bumps in
+      for bump in bumps {
+        guard let position = bump.location?.coordinates else { continue }
+        let circle = GMSCircle(position: position, radius: 10)
+        circle.strokeWidth = 0
+        circle.fillColor = bump.bumpType?.color
+        circle.map = self?.mapView
+      }
     }
+
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    locationManager.delegate = self
+    locationManager.startUpdatingLocation()
+
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    guard let coordinate = locations.last?.coordinate else { return }
+    locationManager.stopUpdatingLocation()
+    mapView.camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: cityZoom)
+
   }
-
-
 }
 

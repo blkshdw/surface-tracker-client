@@ -12,6 +12,8 @@ import CoreMotion
 import ObjectMapper
 import PromiseKit
 
+private let accelerometerUpdateInterval: TimeInterval = 0.2
+
 class BumpManager: NSObject {
   static let instance = BumpManager()
 
@@ -19,6 +21,8 @@ class BumpManager: NSObject {
   let locationManager = CLLocationManager()
 
   var currentLocation: CLLocation? = nil
+
+  private var isMonitoring: Bool = false
 
   var countedBumps: [Bump] = [] {
     didSet {
@@ -28,65 +32,78 @@ class BumpManager: NSObject {
     }
   }
 
+  var potholes: [Bump] {
+    let filteredBumps = countedBumps
+      .filter({ $0.acceleration != nil && $0.acceleration!.amplitude > BumpType.light.rawValue})
+    return clusterBumps(filteredBumps)
+  }
+
   private override init() {
     super.init()
+    self.isMonitoring = Configuration.current.debugMode
     if let bumpsJSON: String = StorageHelper.loadObjectForKey(.bumps) {
       self.countedBumps = Mapper<Bump>().mapArray(JSONString: bumpsJSON) ?? []
       debugPrint("Bumps loaded: \(countedBumps.count)")
       NotificationManager.show("Bumps loaded: \(countedBumps.count)")
       _ = sendSavedBumps()
     }
-    motionManager.accelerometerUpdateInterval = 0.5
+    motionManager.accelerometerUpdateInterval = accelerometerUpdateInterval
     locationManager.delegate = self
+  }
+
+  func clusterBumps(_ oldBumps: [Bump]) -> [Bump] {
+    var bumps: [Bump] = []
+    debugPrint("Bumps count: \(bumps.count)")
+    for bump in oldBumps.sorted(by: { $0.date < $1.date }) {
+      guard let lastBump = bumps.last, bump.date.timeIntervalSince(lastBump.date) < 1 else {
+        bumps.append(bump)
+        continue
+      }
+      guard let lastAcceleration = lastBump.acceleration, let currentAcceleration = bump.acceleration else { continue }
+      lastBump.acceleration = Acceleration.average(lastAcceleration, currentAcceleration)
+    }
+    return bumps
+  }
+
+  func sendSavedBumps() {
+    _ = DataManager.sendSavedBumps(potholes)
+  }
+
+  func startMonitoring() {
+    guard Configuration.current.debugMode else { return }
+    guard !isMonitoring else { return resetMonitoring() }
+
+    locationManager.requestAlwaysAuthorization()
+    locationManager.requestWhenInUseAuthorization()
+    locationManager.startUpdatingLocation()
+
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    motionManager.startAccelerometerUpdates(to: OperationQueue()) { data, error in
+      let newBump = Bump(location: self.currentLocation?.coordinate, acceleration: data?.acceleration)
+      if let acceleration = newBump.acceleration, acceleration.amplitude > BumpType.light.rawValue {
+        self.countedBumps.append(newBump)
+
+        let notificationBody = "x: \(acceleration.x),  y: \(acceleration.y), z: \(acceleration.z)"
+        NotificationManager.show("Bump?",
+                                 subtitle: "Amplitude: \(acceleration.amplitude)",
+                                 body: notificationBody)
+      }
+    }
+    isMonitoring = true
+  }
+
+  func stopMonitoring() {
+    guard isMonitoring else { return }
+    locationManager.stopUpdatingLocation()
+    motionManager.stopAccelerometerUpdates()
+    isMonitoring = false
   }
 
   func resetMonitoring() {
     stopMonitoring()
     startMonitoring()
   }
-
-  func startMonitoring() {
-    locationManager.requestAlwaysAuthorization()
-    locationManager.requestWhenInUseAuthorization()
-    locationManager.startUpdatingLocation()
-
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest
-
-    motionManager.startAccelerometerUpdates(to: OperationQueue()) { data, error in
-      self.countedBumps.append(Bump(location: self.currentLocation?.coordinate, acceleration: data?.acceleration))
-      if let x = data?.acceleration.x, x > 1 {
-        debugPrint("X bump")
-      }
-      if let y = data?.acceleration.y, y > 1 {
-        debugPrint("Y bump")
-      }
-      if let z = data?.acceleration.z, z > 1 {
-        debugPrint("Z bump")
-      }
-    }
-  }
-
-  func stopMonitoring() {
-    locationManager.stopUpdatingLocation()
-    motionManager.stopAccelerometerUpdates()
-  }
-
-  func sendSavedBumps() -> Promise<Void> {
-    let bumpsJSON = countedBumps.toJSON()
-    return NetworkManager.doRequest(.sendBumps, ["bumps": bumpsJSON]).then { _ in
-      debugPrint("Bumps sent: \(bumpsJSON.count)")
-      NotificationManager.show("Bumps sent: \(bumpsJSON.count)")
-      self.countedBumps = []
-      return Promise(value: ())
-    }
-  }
-
-  func fetchBumps() -> Promise<[Bump]> {
-    return NetworkManager.doRequest(.fetchBumps).then { data in
-      guard let bumps = Mapper<Bump>().mapArray(JSONObject: data) else { return Promise(error: DataError.unprocessableData) }
-      return Promise(value: bumps)
-    }
-  }
+  
 }
 
 extension BumpManager: CLLocationManagerDelegate {

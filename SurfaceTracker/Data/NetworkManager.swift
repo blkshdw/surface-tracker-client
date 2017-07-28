@@ -12,10 +12,11 @@ import PromiseKit
 import ObjectMapper
 
 class NetworkManager {
-  static let baseUrl = "http://127.0.0.1:3000"
+  static let baseUrl = "http://165.227.135.67"
   static let apiPrefix = "/"
 
   static func doRequest(_ path: APIPath, _ params: Parameters = [:], _ headers: HTTPHeaders = [:]) -> Promise<Any> {
+    debugPrint(params)
     return Promise() { fullfill, reject in
 
       UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -24,7 +25,7 @@ class NetworkManager {
       var headers = headers
       headers["accept"] = "application/json"
 
-      Alamofire.request(url, method: path.method, parameters: params, encoding: URLEncoding.default, headers: headers)
+      Alamofire.request(url, method: path.method, parameters: params, encoding: path.encoding, headers: headers)
         .validate(statusCode: 200..<300)
         .responseJSON { response in
           UIApplication.shared.isNetworkActivityIndicatorVisible = false

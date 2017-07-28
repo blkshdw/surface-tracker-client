@@ -11,15 +11,7 @@ import ObjectMapper
 
 class Configuration: Mappable {
   var pushNotificationEnabled: Bool = true
-  var debugMode: Bool = true {
-    didSet {
-      if debugMode {
-        BumpManager.instance.startMonitoring()
-      } else {
-        BumpManager.instance.stopMonitoring()
-      }
-    }
-  }
+  var debugMode: Bool = true
   var debugNotifications: Bool = true
   var useLocationInBaground: Bool = true
 
@@ -32,6 +24,11 @@ class Configuration: Mappable {
 
   func save() {
     StorageHelper.save(self.toJSONString(), forKey: .configuration)
+    if debugMode {
+      BumpManager.instance.startMonitoring()
+    } else {
+      BumpManager.instance.stopMonitoring()
+    }
   }
 
   required init?(map: Map) {

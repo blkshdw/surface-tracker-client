@@ -32,7 +32,7 @@ enum APIPath {
   var method: HTTPMethod {
     switch self {
     case .sendBumps:
-      return .put
+      return .post
     default:
       return .get
     }

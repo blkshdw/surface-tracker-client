@@ -19,6 +19,7 @@ class SettingsViewController: FormViewController {
       style: .done,
       target: self,
       action: #selector(SettingsViewController.save))
+    navigationItem.rightBarButtonItem?.isEnabled = false
     configureForm()
   }
 
